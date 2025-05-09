@@ -1,0 +1,44 @@
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 1;
+  min-height: 400px;
+}
+
+.leaflet-pane {
+  z-index: 1;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10;
+}
+
+.custom-marker-icon {
+  background: transparent;
+  border: none;
+}
+
+.leaflet-marker-icon {
+  transition: transform 0.2s;
+}
+
+.leaflet-marker-icon:hover {
+  transform: scale(1.2);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-popup-content {
+  margin: 13px 19px;
+  line-height: 1.4;
+}
+
+/* Fix for marker icon */
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  display: block !important;
+}

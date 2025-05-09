@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 230 60% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 190 80% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 190 80% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 190 80% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 230 60% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 190 80% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 190 80% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 190 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 155, 155, 0.8);
+}
+
+/* Custom styles */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary via-primary to-purple-500;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-content {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-content:hover {
+  transform: translateZ(20px);
+}
+
+.glass-effect {
+  @apply bg-opacity-10 backdrop-blur-lg bg-white border border-white/20 shadow-xl;
+}
+
+/* Add these styles at the end of the file for card hover effects */
+@layer utilities {
+  .card-hover-effect {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:scale-105 hover:z-10;
+  }
+
+  .card-glow {
+    @apply hover:shadow-[0_0_15px_rgba(65,105,225,0.5)];
+  }
+
+  .card-glow-secondary {
+    @apply hover:shadow-[0_0_15px_rgba(0,191,255,0.5)];
+  }
+
+  .card-glow-accent {
+    @apply hover:shadow-[0_0_15px_rgba(138,43,226,0.5)];
+  }
+}
