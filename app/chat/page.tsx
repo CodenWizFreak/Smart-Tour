@@ -110,10 +110,11 @@ export default function ChatPage() {
         }
         break
       case 1: // Budget
-        if (!input.toLowerCase().match(/\d+k|\d+,\d+|\d+\s*inr|\d+\s*rs/)) {
-          return "Please provide a valid budget in INR format (e.g., 30k, 30,000, 30000 INR)."
-        }
-        break
+      if (!input.toLowerCase().match(/\b(\d+k|\d{1,3}(?:,\d{3})*|\d+)\s*(inr|rs)?\b/)) {
+        return "Please provide a valid budget in INR format (e.g., 500, 30k, 30,000, 30000 INR).";
+      }
+      break;
+
       case 2: // Season
         const seasons = [
           "summer",
