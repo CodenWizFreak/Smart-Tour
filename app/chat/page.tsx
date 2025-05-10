@@ -288,13 +288,13 @@ export default function ChatPage() {
           console.log("Setting showMap to true with places:", data.places)
         } else {
           console.warn("No places received from API")
-          // Use default places if none were received
+          // Use default places if none were received - this should no longer happen with our fixes
           const defaultPlaces = [
-            { name: "Manali", state: "Himachal Pradesh", lat: 32.2432, lng: 77.1892 },
-            { name: "Shimla", state: "Himachal Pradesh", lat: 31.1048, lng: 77.1734 },
-            { name: "Darjeeling", state: "West Bengal", lat: 27.041, lng: 88.2663 },
-            { name: "Goa", state: "Goa", lat: 15.2993, lng: 73.9322 },
-            { name: "Jaipur", state: "Rajasthan", lat: 26.9124, lng: 75.7873 },
+            { name: "Shantiniketan", state: "West Bengal", lat: 23.6773, lng: 87.6838 },
+            { name: "Raghurajpur", state: "Odisha", lat: 20.4162, lng: 85.8266 },
+            { name: "Nalanda", state: "Bihar", lat: 25.1367, lng: 85.4458 },
+            { name: "Netarhat", state: "Jharkhand", lat: 23.4842, lng: 84.2675 },
+            { name: "Mawlynnong", state: "Meghalaya", lat: 25.2031, lng: 91.9182 },
           ]
           setPlaces(defaultPlaces)
           setShowMap(true)
@@ -484,5 +484,5 @@ export default function ChatPage() {
         </div>
       </div>
     </main>
-  )
-}
+    )
+  }
