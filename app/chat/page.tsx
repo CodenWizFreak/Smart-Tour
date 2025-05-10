@@ -104,6 +104,9 @@ export default function ChatPage() {
           "fun",
           "romantic",
           "honeymoon",
+          "museum",
+          "local",
+          "educational",
         ]
         if (!placeTypes.some((type) => input.toLowerCase().includes(type))) {
           return "Please specify a valid place type like Mountain, Beach, Historical, City, etc."
