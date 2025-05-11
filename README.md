@@ -96,3 +96,6 @@ An intelligent travel companion that suggests personalized Indian destinations u
 
 Feel free to fork this repository, raise issues, or submit pull requests to add features, improve the design, or enhance the functionality.  All contributions are welcome!
 
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
