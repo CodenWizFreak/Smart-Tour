@@ -25,3 +25,5 @@ An intelligent travel companion that suggests personalized Indian destinations u
     - **Gemini API:** Powers the AI-driven travel recommendations.
     - **OpenCage Forward Geocoder:** Provides geographical coordinates for locations.
     - **Leaflet.js:**  Interactive map library for visualizing destinations.
+ 
+
