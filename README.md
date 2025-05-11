@@ -79,7 +79,9 @@ An intelligent travel companion that suggests personalized Indian destinations u
 
 ## 📸 Screenshots
 ![logo-text](https://github.com/user-attachments/assets/9142a0e1-2aa3-460d-a23f-4b2080c157f7)
-![Smart Tour App Screenshot 2](https://i.imgur.com/YOUR_SCREENSHOT_LINK_HERE_2.png)
+
+![logo-compass](https://github.com/user-attachments/assets/234a3e05-9bae-4065-97f4-dc0c301a5466)
+
 
 ## 🚀 How to Use
 
