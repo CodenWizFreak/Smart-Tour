@@ -78,9 +78,15 @@ An intelligent travel companion that suggests personalized Indian destinations u
      (This will typically start the frontend on `http://localhost:3000`)
 
 ## 📸 Screenshots
-![logo-text](https://github.com/user-attachments/assets/9142a0e1-2aa3-460d-a23f-4b2080c157f7)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9142a0e1-2aa3-460d-a23f-4b2080c157f7" alt="logo-text" />
+</p>
 
-![logo-compass](https://github.com/user-attachments/assets/234a3e05-9bae-4065-97f4-dc0c301a5466)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/234a3e05-9bae-4065-97f4-dc0c301a5466" alt="logo-compass" width="200"/>
+</p>
+
 
 
 ## 🚀 How to Use
