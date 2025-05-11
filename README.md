@@ -78,10 +78,7 @@ An intelligent travel companion that suggests personalized Indian destinations u
      (This will typically start the frontend on `http://localhost:3000`)
 
 ## 📸 Screenshots
-
-![Smart Tour App Screenshot](https://i.imgur.com/YOUR_SCREENSHOT_LINK_HERE.png)
-<!-- Replace with a relevant screenshot link. Example link above points to imgur, which is commonly used. -->
-<!-- Add more screenshots as needed -->
+![logo-text](https://github.com/user-attachments/assets/9142a0e1-2aa3-460d-a23f-4b2080c157f7)
 ![Smart Tour App Screenshot 2](https://i.imgur.com/YOUR_SCREENSHOT_LINK_HERE_2.png)
 
 ## 🚀 How to Use
