@@ -26,4 +26,55 @@ An intelligent travel companion that suggests personalized Indian destinations u
     - **OpenCage Forward Geocoder:** Provides geographical coordinates for locations.
     - **Leaflet.js:**  Interactive map library for visualizing destinations.
  
+## ⚙️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CodenWizFreak/Smart-Tour.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd Smart-Tour
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install  # For the frontend (Next.js)
+   cd backend
+   npm install  # For the backend (Express)
+   cd ..
+   ```
+
+4. Configure API keys:
+
+   - Obtain API keys for Gemini and OpenCage Forward Geocoder.
+   - Create a `.env.local` file in the root directory of the project and add your API keys:
+
+     ```
+     GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+     OPENCAGE_API_KEY=YOUR_OPENCAGE_API_KEY
+     ```
+
+   - Create a `.env` file in the `backend` directory:
+    ```
+    OPENCAGE_API_KEY=YOUR_OPENCAGE_API_KEY
+    GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+    ```
+5. Run the application:
+
+   - Start the backend server:
+     ```bash
+     cd backend
+     npm run start
+     ```
+
+   - Start the frontend development server:
+     ```bash
+     cd ..
+     npm run dev
+     ```
+
+     (This will typically start the frontend on `http://localhost:3000`)
+ 
 
