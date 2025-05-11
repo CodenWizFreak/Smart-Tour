@@ -83,5 +83,12 @@ An intelligent travel companion that suggests personalized Indian destinations u
 <!-- Replace with a relevant screenshot link. Example link above points to imgur, which is commonly used. -->
 <!-- Add more screenshots as needed -->
 ![Smart Tour App Screenshot 2](https://i.imgur.com/YOUR_SCREENSHOT_LINK_HERE_2.png)
- 
+
+## 🚀 How to Use
+
+1.  Launch the application in your web browser.
+2.  Enter your travel preferences (place type, budget, season, source) in the input fields.
+3.  Click the "Get Recommendations" button.
+4.  Explore the recommended destinations on the interactive map, complete with state-based colored markers and detailed travel information.
+5.  Interact with map markers to view specific travel details and insights.
 
