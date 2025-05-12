@@ -97,6 +97,9 @@ An intelligent travel companion that suggests personalized Indian destinations u
 4.  Explore the recommended destinations on the interactive map, complete with state-based colored markers and detailed travel information.
 5.  Interact with map markers to view specific travel details and insights.
 
+## Deployed Website
+https://smart-tour-ecru.vercel.app
+
 ## 🤝 Contribution
 
 Feel free to fork this repository, raise issues, or submit pull requests to add features, improve the design, or enhance the functionality.  All contributions are welcome!
