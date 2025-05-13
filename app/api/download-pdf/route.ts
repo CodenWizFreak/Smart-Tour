@@ -7,7 +7,7 @@ export async function GET() {
     // Path to your PDF in the public directory
     // Note: When accessing files in public directory, don't include "public" in the path
     // Assuming your PDF is at public/resume.pdf
-    const filePath = path.join(process.cwd(), "public", "Smart-Tour.pdf")
+    const filePath = path.join(process.cwd(), "public", "Smart-Tourpdf.pdf")
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
