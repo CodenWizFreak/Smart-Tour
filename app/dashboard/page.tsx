@@ -90,7 +90,7 @@ export default function DashboardPage() {
 
   // Mock data for charts
   const topCitiesData = {
-    labels: ["Goa", "Manali", "Jaipur", "Kerala", "Darjeeling"],
+    labels: ["Puri", "Manali", "Jaipur", "Kovalam", "Darjeeling"],
     datasets: [
       {
         label: "Top 5 Cities Selected",
