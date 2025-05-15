@@ -52,7 +52,7 @@ IMPORTANT: Make sure to use proper bullet points (•) and avoid using ** or <st
     for (const model of models) {
       try {
         response = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+          https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey},
           {
             method: "POST",
             headers: {
@@ -68,6 +68,9 @@ IMPORTANT: Make sure to use proper bullet points (•) and avoid using ** or <st
                   ],
                 },
               ],
+              tools:[{
+              "google_search": {}
+          }],
               generationConfig: {
                 temperature: 0.7,
                 topK: 40,
