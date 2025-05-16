@@ -67,113 +67,134 @@ export default function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  const validateInput = (input: string, step: number) => {
-    if (!input.trim() || input.toLowerCase() === "don't know" || input.toLowerCase() === "dont know") {
-      // Return appropriate error message based on the current step
-      switch (step) {
-        case 0:
-          return "Please specify what kind of place you want to visit (Mountain, Beach, Historical, etc.)."
-        case 1:
-          return "Please provide a valid budget in INR."
-        case 2:
-          return "Please specify when you want to travel (month or season)."
-        case 3:
-          return "Please specify where you will be traveling from."
-        default:
-          return "Please provide a valid response."
-      }
-    }
-
-    // Check if the input is relevant to the current question
+  // Modified validation function that rejects budgets less than 50 INR
+const validateInput = (input: string, step: number) => {
+  if (!input.trim() || input.toLowerCase() === "don't know" || input.toLowerCase() === "dont know") {
+    // Return appropriate error message based on the current step
     switch (step) {
-      case 0: // Place type
-        const placeTypes = [
-          "mountain",
-          "beach",
-          "historical",
-          "city",
-          "village",
-          "adventure",
-          "hill",
-          "desert",
-          "forest",
-          "wildlife",
-          "pilgrimage",
-          "romantic",
-          "urban",
-          "fun",
-          "romantic",
-          "honeymoon",
-          "museum",
-          "local",
-          "educational",
-        ]
-        if (!placeTypes.some((type) => input.toLowerCase().includes(type))) {
-          return "Please specify a valid place type like Mountain, Beach, Historical, City, etc."
-        }
-        break
-      case 1: // Budget
+      case 0:
+        return "Please specify what kind of place you want to visit (Mountain, Beach, Historical, etc.)."
+      case 1:
+        return "Please provide a valid budget in INR."
+      case 2:
+        return "Please specify when you want to travel (month or season)."
+      case 3:
+        return "Please specify where you will be traveling from."
+      default:
+        return "Please provide a valid response."
+    }
+  }
+
+  // Check if the input is relevant to the current question
+  switch (step) {
+    case 0: // Place type
+      const placeTypes = [
+        "mountain",
+        "beach",
+        "historical",
+        "city",
+        "village",
+        "adventure",
+        "hill",
+        "desert",
+        "forest",
+        "wildlife",
+        "pilgrimage",
+        "romantic",
+        "urban",
+        "fun",
+        "romantic",
+        "honeymoon",
+        "museum",
+        "local",
+        "educational",
+      ]
+      if (!placeTypes.some((type) => input.toLowerCase().includes(type))) {
+        return "Please specify a valid place type like Mountain, Beach, Historical, City, etc."
+      }
+      break
+    case 1: // Budget
+      // First check if the format is valid
       if (!input.toLowerCase().match(/\b(\d+k|\d{1,3}(?:,\d{3})*|\d+)\s*(inr|rs)?\b/)) {
-        return "Please provide a valid budget in INR format (e.g., 500, 30k, 30,000, 30000 INR).";
+        return "Please provide a valid budget in INR format (e.g., 500, 30k, 30,000, 30000 INR)."
+      }
+      
+      // Now extract the numeric value to check if it's below 50 INR
+      let budgetValue = 0;
+      
+      // Remove commas and non-numeric characters except 'k' for thousand
+      const cleanInput = input.toLowerCase().replace(/[^0-9k]/g, '');
+      
+      if (cleanInput.includes('k')) {
+        // Handle 'k' notation (e.g., '30k' = 30,000)
+        budgetValue = parseFloat(cleanInput.replace('k', '')) * 1000;
+      } else {
+        // Regular number
+        budgetValue = parseFloat(cleanInput);
+      }
+      
+      // Check if budget is less than 50 INR
+      if (budgetValue < 50) {
+        return "Budget should be at least 50 INR. Please provide a valid budget."
       }
       break;
 
-      case 2: // Season
-        const seasons = [
-          "summer",
-          "winter",
-          "monsoon",
-          "spring",
-          "autumn",
-          "fall",
-          "rainy",
-          "january",
-          "february",
-          "march",
-          "april",
-          "may",
-          "june",
-          "july",
-          "august",
-          "september",
-          "october",
-          "november",
-          "december",
-        ]
-        if (!seasons.some((season) => input.toLowerCase().includes(season))) {
-          return "Please specify a valid season or month (e.g., Summer, Winter, July, December)."
+    case 2: // Season
+      const seasons = [
+        "summer",
+        "winter",
+        "monsoon",
+        "spring",
+        "autumn",
+        "fall",
+        "rainy",
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december",
+      ]
+      if (!seasons.some((season) => input.toLowerCase().includes(season))) {
+        return "Please specify a valid season or month (e.g., Summer, Winter, July, December)."
+      }
+      break
+    case 3: // Source
+      // Basic check for Indian city names
+      const majorCities = [
+        "delhi",
+        "mumbai",
+        "kolkata",
+        "chennai",
+        "bangalore",
+        "hyderabad",
+        "ahmedabad",
+        "pune",
+        "jaipur",
+        "lucknow",
+        "kanpur",
+        "nagpur",
+        "indore",
+        "thane",
+        "bhopal",
+      ]
+      if (!majorCities.some((city) => input.toLowerCase().includes(city))) {
+        // Not a strict validation, just a warning
+        if (input.length < 3) {
+          return "Please provide a valid city name you'll be traveling from."
         }
-        break
-      case 3: // Source
-        // Basic check for Indian city names
-        const majorCities = [
-          "delhi",
-          "mumbai",
-          "kolkata",
-          "chennai",
-          "bangalore",
-          "hyderabad",
-          "ahmedabad",
-          "pune",
-          "jaipur",
-          "lucknow",
-          "kanpur",
-          "nagpur",
-          "indore",
-          "thane",
-          "bhopal",
-        ]
-        if (!majorCities.some((city) => input.toLowerCase().includes(city))) {
-          // Not a strict validation, just a warning
-          if (input.length < 3) {
-            return "Please provide a valid city name you'll be traveling from."
-          }
-        }
-        break
-    }
-
-    return null // No error
+      }
+      break
   }
+
+  return null // No error
+}
 
   const handleSend = async () => {
     if (!input.trim()) return
